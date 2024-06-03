@@ -1,4 +1,4 @@
-package registered.prediction.contorller;
+package registered.prediction.controller;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

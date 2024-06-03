@@ -55,6 +55,6 @@
     </security-role>
 
     <listener>
-        <listener-class>registered.location.listener.LocationServletContextListener</listener-class>
+        <listener-class>database.inmemory.listener.FillDBDataServletContextListener</listener-class>
     </listener>
 </web-app>

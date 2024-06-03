@@ -1,4 +1,4 @@
-package registered.prediction.contorller;
+package registered.prediction.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -55,9 +55,9 @@ public class PredictionAddController extends AbstractController {
         if (isValidPredictionDate(predictionDay, predictionMonth, predictionYear)) {
             LocalDate localDate = LocalDate.of(predictionYear, predictionMonth, predictionDay);
 
-            predictionLocationService.findById(predictionLocationId).ifPresentOrElse(existedPredictionLocation -> {
-                createOrUpdatePrediction(request, predictionText, localDate, existedPredictionLocation, predictionId);
-            }, () -> request.setAttribute("predictionLocationIdException", "Unexpected prediction location name."));
+            predictionLocationService.findById(predictionLocationId).ifPresentOrElse(existedPredictionLocation ->
+                    createOrUpdatePrediction(request, predictionText, localDate, existedPredictionLocation, predictionId),
+                    () -> request.setAttribute("predictionLocationIdException", "Unexpected prediction location name."));
         }
 
         populatePredictionLocations(request);

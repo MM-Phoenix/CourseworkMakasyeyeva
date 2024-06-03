@@ -11,61 +11,77 @@
 <html>
 <head>
     <title>Show predictions</title>
-
     <link rel='stylesheet' type='text/css' href='${pageContext.request.contextPath}/css/bundle.css'>
 </head>
 <body>
+    <jsp:include page="../utilities/header.jsp"/>
 
-<form>
-    <label for="prediction-dates">Dates</label>
+    <div class="predictions-container" style="text-align: center">
+        <div class="feature-text">
+            <div class="feature-text-inner-wrapper">
+                <div class="feature-text-header">
+                    <h2 class="predictions-header">Private Weather Forecast</h2>
+                </div>
+                <div class="feature-text-paragraph">
+                    <p class="predictions-paragraph">
+                        "Select desired "date" and "location", then "search" to filter the predictions.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <select id="prediction-dates" name="predictionDateId">
-        <option value="${0}">Any</option>
+        <div class="predictions-inner-container">
+            <div class="filter-container">
+                <div class="filter">
+                    <form>
+                        <label for="prediction-dates">Dates</label>
 
-        <c:forEach items="${allPredictionDates}" var="predictionDate">
-            <option value="${predictionDate.id}" <c:if test="${predictionDateId == predictionDate.id}">selected</c:if>>
-                    ${predictionDate.date}
-            </option>
-        </c:forEach>
-    </select>
+                        <select id="prediction-dates" name="predictionDateId">
+                            <option value="${0}">Any</option>
 
-    <label for="prediction-locations">Locations</label>
+                            <c:forEach items="${allPredictionDates}" var="predictionDate">
+                                <option value="${predictionDate.id}" <c:if test="${predictionDateId == predictionDate.id}">selected</c:if>>
+                                        ${predictionDate.date}
+                                </option>
+                            </c:forEach>
+                        </select>
 
-    <select id="prediction-locations" name="predictionLocationId">
-        <option value="${0}">Any</option>
+                        <label for="prediction-locations">Locations</label>
 
-        <c:forEach items="${predictionLocations}" var="predictionLocation">
-            <option value="${predictionLocation.id}" <c:if test="${predictionLocationId == predictionLocation.id}">selected</c:if>>
-                    ${predictionLocation.name}
-            </option>
-        </c:forEach>
-    </select>
+                        <select id="prediction-locations" name="predictionLocationId">
+                            <option value="${0}">Any</option>
 
-
-    <button type='submit'>Show</button>
-
-    <h1>Predictions</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Text</th>
-            <th>Date</th>
-            <th>Location</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${predictions}" var="prediction">
-            <tr>
-                <td>${prediction.text}</td>
-                <td>${prediction.date.date}</td>
-                <td>${prediction.location.name}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</form>
-
-<a href="${pageContext.request.contextPath}/">Go to main</a>
-    <a href="${pageContext.request.contextPath}/logout">Logout</a>
+                            <c:forEach items="${predictionLocations}" var="predictionLocation">
+                                <option value="${predictionLocation.id}" <c:if test="${predictionLocationId == predictionLocation.id}">selected</c:if>>
+                                        ${predictionLocation.name}
+                                </option>
+                            </c:forEach>
+                        </select>
+                        <button  class="link link-is-small-button theme-dark-background" style="display: inline" type='submit'>Show</button>
+                    </form>
+                </div>
+            </div>
+            <div class="table-container" style="display: inline-block">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Text</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${predictions}" var="prediction">
+                        <tr>
+                            <td>${prediction.text}</td>
+                            <td>${prediction.date.date}</td>
+                            <td>${prediction.location.name}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

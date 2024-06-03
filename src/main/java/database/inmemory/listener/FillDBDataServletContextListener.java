@@ -1,4 +1,4 @@
-package registered.location.listener;
+package database.inmemory.listener;
 
 import registered.date.data.PredictionDate;
 import registered.date.repository.PredictionDateInMemoryRepository;
@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-public class LocationServletContextListener implements ServletContextListener {
+public class FillDBDataServletContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
