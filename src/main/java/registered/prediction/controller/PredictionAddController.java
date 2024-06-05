@@ -22,7 +22,7 @@ public class PredictionAddController extends AbstractController {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         populateDefaultAttributeValues(request);
         populatePredictionLocations(request);
-        request.getRequestDispatcher("/admin/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/pages/admin/index.jsp").forward(request, response);
     }
 
     private void populateDefaultAttributeValues(HttpServletRequest request) {
@@ -61,7 +61,7 @@ public class PredictionAddController extends AbstractController {
         }
 
         populatePredictionLocations(request);
-        request.getRequestDispatcher("/admin/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/pages/admin/index.jsp").forward(request, response);
     }
 
     private String getAndSetAttributePredictionText(HttpServletRequest request) {

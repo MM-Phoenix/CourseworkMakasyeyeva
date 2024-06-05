@@ -14,6 +14,6 @@ public class ErrorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("errorText", "You have no access to this page.");
-        request.getRequestDispatcher("general/error.jsp").forward(request, response);
+        request.getRequestDispatcher("/pages/general/error.jsp").forward(request, response);
     }
 }

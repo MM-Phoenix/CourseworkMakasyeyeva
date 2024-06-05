@@ -13,6 +13,6 @@ public class MainController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("general/main.jsp").forward(request, response);
+        request.getRequestDispatcher("pages/general/main.jsp").forward(request, response);
     }
 }

@@ -6,7 +6,7 @@
             <div class="navigation-desktop">
                 <div class="navigation-desktop-logo-container">
                     <a class="navigation-desktop-logo" aria-label="Private Weather Forecast Home" href="${pageContext.request.contextPath}/">
-                        <img src="${pageContext.request.contextPath}/images/pwf-logo-white.png"
+                        <img src="${pageContext.request.contextPath}/resources/images/pwf-logo-white.png"
                              height="50px" width="150px"
                              alt="PrivateWeatherForecast" style="color: black">
                     </a>

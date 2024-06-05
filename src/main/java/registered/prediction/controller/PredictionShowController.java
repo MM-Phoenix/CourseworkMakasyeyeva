@@ -21,7 +21,7 @@ public class PredictionShowController extends AbstractController {
 
         populatePredictions(request, predictionDateId, predictionLocationId);
 
-        request.getRequestDispatcher("/user/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/pages/user/index.jsp").forward(request, response);
     }
 
     private void populatePredictions(HttpServletRequest request, long predictionDateId, long predictionLocationId) {
